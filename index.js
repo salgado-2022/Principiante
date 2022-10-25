@@ -1,34 +1,14 @@
-/*
-Crear una promesa para devolver el factorial  de un numero 
-comprendido entre 1 a 10
-emplear async y await
-*/
-
-const empleados=[
-    {
-        id:1,
-        nombre: 'Simon bolivar'
-    },
-    {
-        id:2,
-        nombre:'Juan Salgado'
+const calcular = () =>{
+    const masa = document.querySelector('#masa')
+    const volumen = document.querySelector('#volumen')
+    let resultado = document.querySelector('#resultado')
+    if (masa.value=="" || volumen.value=="") {
+        
+    }else{
+        let calculo = masa.value/volumen.value
+        resultado.value = calculo
     }
-]
-
-const  getFactorial = (id)  =>{
-    return new Promise( (resolve, reject) =>{
-        const empleado = empleados.find(e => e.id ===id)?.nombre;
-        (empleado)
-        ?resolve(empleado)
-        :reject('El empleado no existe')
-    })
 }
 
-
-const id= 0
-
-getFactorial(id)
-    .then(empleado => {
-        console.log('El empleado: '+empleado)
-    })
-    .catch(err => console.log(err))
+const buttonCalcular = document.querySelector('#calcular')
+buttonCalcular.addEventListener('click',calcular)
